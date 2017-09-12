@@ -1,0 +1,103 @@
+\documentclass{article}
+
+% Here I'm putting comments in the preamble because the environment name comes up at the beginning of the body below.
+% A "document" is an environment.  It's what we've been using so far, and it appears to be necessary.
+% Let's explore some more.
+
+\usepackage{amsmath} % let's see if I actually have this package.
+
+\begin{document}
+
+Environments!
+
+\begin{center}
+This is the ``center" environment.  It centers text on the page.
+\end{center}
+
+\begin{flushright}
+This is the ``flush right" environment.
+\end{flushright}
+
+\begin{flushleft}
+This is the ``flush left" environment.
+\end{flushleft}
+
+\begin{large}
+This is the `large' environment.
+\end{large}
+
+\begin{Large}
+This is the `Large' environment.
+\end{Large}
+
+\begin{small}
+This is the `small' environment.
+\end{small}
+
+---------------
+
+The `equation' environment.  First, three equivalent notations for displayed equations.
+
+$$x^2 + y^2 = 1$$
+
+\[ x^2 + y^2 = 1\]
+
+\begin{equation}
+x^2 + y^2 = 1
+\end{equation}
+
+Note that the `equation' environment automatically numbers equations!  I can give an equation an alias, or a `label' which is like defining a variable name that refers to that equation globally.  For example,
+
+\begin{equation}\label{trigID}
+\sin^2 x + \cos^2 x = 1
+\end{equation}
+
+Now I can refer to equation \ref{trigID} solely by its label so I don't have to worry about updating the equation numbers.  This is done automatically!
+
+Now let's check out the `equation*' environment from the `amsmath' package.
+
+\begin{equation*}\tag{Eq 4}\label{eq4}
+x^5 + y^5 = 1
+\end{equation*}
+Now references to \ref{eq4} show up using the tag I specified.
+
+---------------
+
+The `align' environment.  First, consider this example:
+
+\[ 3x + 2y - z = 10\]
+\[ 2x + y -5z = 8 \]
+\[ -x + 5y + 9z = 0 \]
+
+Note their alignment.  It's all wonky, right?  We normally want to align equations by their equality sign, as in:
+
+% The `align' environment comes from the `amsmath' package in the preamble.
+
+\begin{align}
+3x + 2y - z &= 10 \\ % note the presence of the '&' which indicates the following character is to be used for alignment.  The '\\' indicates there is a next line.
+2x + y -5z &= 8 \\
+-x + 5y + 9z &= 0 
+\end{align}
+Also note that the `align' environment also numbers equations like the `equation' environment.  The `align*' environment does not number by default (similar to the `equation*' environment).
+
+Let's practice with the Triangle Proof:
+
+\begin{align*}
+|x + y|^2 &= (x + y)^2 \\
+ &= x^2 + 2xy + y^2 \\
+ &= |x|^2 + 2xy + |y|^2 \\
+ &\leq |x|^2 + 2|xy| + |y|^2 \\
+&= |x|^2 + 2|x| |y| + |y|^2 \\
+ &= (|x| + |y|)^2
+\end{align*}
+
+Another example, integration by parts:
+
+$$\int x \cos x dx$$
+
+\begin{align*}
+u &= x & v &= \sin x dx \\ % the first and third '&' are to align by '=' signs.  The second '&' is to create the necessary space between equations.
+du &= dx & dv &= \cos x
+\end{align*}
+
+\end{document}

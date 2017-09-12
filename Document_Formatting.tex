@@ -1,0 +1,46 @@
+\documentclass{article}
+
+% let's start by defining custom margins using the "geometry" package.
+\usepackage[top=1in, bottom=1in, left=1in,  right=1in]{geometry} % The optional arguments are margins called by name and can interpret both inches "in" and centimeters "cm"  
+% the margins are measured from the edge of the paper.
+% we could have saved code by using \usepackage[margin=1in]{geometry} rather than defining each margin separately.
+% we can also define the paper size with "paperwidth" and "paperheight" as optional arguments for the \usepackage command.
+
+\usepackage{graphics} % do I have this?
+
+
+\begin{document}
+
+\tableofcontents % this is a SERIOUS time saver.  Note that the TOC is created as a separate page.
+
+\title{\LaTeX \ Document Formatting} % heheh the \LaTeX command.  It was a little too close to "Document" so I added a space with the '\ ' combo.
+\author{Keith Penney}
+\date{\today} % isn't that a cool little command?
+\maketitle % This actually produces the title page.
+
+This document provides examples of formatting the layout of the text, e.g. chapters, sections, etc.
+
+\section{Sections}
+Here we use the `section' command to open a new section with a given name.  It numbers automatically, of course.
+
+	\subsection{Subsection 1}Here we have our first subsection which is again numbered automatically.  % optional indentation just for code clarity.
+	\subsection{Subsection 2}Oh boy, another subsection!  Interesting that you don't have to open or close a subsection or section.  They seem to just be dividers rather than enclosures. Curious... It's also interesting to note that these paragraphs do not indent the first line automatically like lines in the main ``document" body do.  Again, curious... 
+
+\section{More content}
+We add content here mostly so we can see how the document continues on to a new section and to provide our table of contents with a little bit more heft.  A wimpy table of contents is never a good thing, especially in a master's thesis.
+\subsection{Unnecessary}Well now I'm just being obnoxious, but it's better than a lorem ipsum, right?
+
+\section{User-Defined Commands}
+Let's make use of the handy \LaTeX \ ability to define variables for just about anything to save ourselves some typing.  We'll refer to the following equation as "eq1":
+
+\def\eq1{y = \frac{x}{3x^2 + x + 1}} % Cool.  Now I've defined it, let's use it!
+
+$$\eq1$$
+
+Now instead of wasting my time copy-pasting or, god forbid, \textit{re-typing} all of that nonsense, I can just call it up whenever I want.  You won't even see it coming, it'll be so fast!  I can even do it inline.  When's he gonna do it?  Man, he just keeps $\eq1$ . Boom!  You didn't even see it coming!  So fast!
+
+\def\likeaboss{I can also define variable/command names for text.}
+
+Of course, \likeaboss
+
+\end{document}
