@@ -1,0 +1,30 @@
+
+% boilerplate
+\documentclass{article}
+
+% We need to use the 'array' package to use the 'tabular' environment
+\usepackage{array}
+
+\begin{document}
+
+% ==============
+% This first table is as simple as it gets. No caption, no reference (label).
+% r = right; c = center; l = left;
+\begin{tabular}{rcl}
+  Lorem   & 100.0 & Itita \\
+  Ipsum   & 99.9  & Capita \\
+  Sin     & 42    & Melica \\
+  Dolerat & NaN   & Mystica \\
+\end{tabular}
+
+% This table is wrapped in the "table" environment which accepts a caption and label (like graphics)
+\begin{table}[h] % optional placement specifier within [].
+                 % h = "here", t = "top", b = "bottom", p = "dedicated page", ! = "I'm serious", H = "Here, dammit!"
+\begin{tabular}{l|p{36.5ex}} % l = left; p{0.5ex} = fixed-width of 0.5ex (Note the vertical bar between them)
+  This is one line & but hopefully this can be broken into multiple lines if needed \\
+  But the right column & shall not exceed the width specified by the cryptic ``0.5ex" \\
+\end{tabular}
+\end{table}
+
+
+\end{document}
