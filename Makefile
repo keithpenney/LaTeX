@@ -7,6 +7,6 @@ DEMOS=demo1 demo2 demo3 tables lists
 
 .PHONY: clean
 clean:
-	rm -rf $(addsuffix .aux, DEMOS)
-	rm -rf $(addsuffix .log, DEMOS)
-	rm -rf $(addsuffix .pdf, DEMOS)
+	rm -rf $(addsuffix .aux, $(DEMOS))
+	rm -rf $(addsuffix .log, $(DEMOS))
+	rm -rf $(addsuffix .pdf, $(DEMOS))
